@@ -14,6 +14,20 @@ class UserViewModel{
     private let scheduler = RxScheduler.sharedInstance
     private let disposeBag = DisposeBag()
     internal let users: Variable<[User]> = Variable([])
+    internal var selectedUser: Variable<User?> = Variable(nil)
+    internal var cellData: Observable<[(User,Bool)]>{
+        return Observable.combineLatest(users.asObservable(), selectedUser.asObservable(), resultSelector: { (elements,selected) in
+                return elements.map({ e -> (User,Bool) in
+                    if e.id == selected?.id{
+                        return (e,true)
+                    }else{
+                        return (e,false)
+                    }
+                })
+            
+            }
+        )
+    }
     internal let viewState = Variable(ViewState.blank)
     internal let scrollEndComing = Variable(false)
     
@@ -35,6 +49,8 @@ class UserViewModel{
                 self.subscribeState(state: event.element!)
                 print(self.viewState.value)
             }.disposed(by: disposeBag)
+        
+        
 
     }
     
@@ -54,6 +70,8 @@ class UserViewModel{
             self.users.value = users
         }
     }
+    
+    
 
 }
 

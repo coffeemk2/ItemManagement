@@ -14,7 +14,7 @@ enum SlackRouter: URLRequestConvertible {
 
     
     static let baseURLString = "https://slack.com/api"
-    static let token = "xoxp-3241757266-4596903960-145338428643-3229877219e084d0346e00680a4bd3fb"
+    static let token = "xoxp-3241757266-4596903960-161352866900-28021fc12c98031f511fca16a0c87d78"
     
     var method: HTTPMethod {
         switch self {

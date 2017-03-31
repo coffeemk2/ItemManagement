@@ -17,6 +17,11 @@ class UserTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        profileImageView.layer.cornerRadius = 8
+        profileImageView.layer.masksToBounds = true
+
+        
+//        fullnameLabel.font = UIFont(name: "Lato-Bold", size: 17.0)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

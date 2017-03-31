@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="K6N-jp-V5M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="K6N-jp-V5M">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -133,7 +133,7 @@
                     <connections>
                         <outlet property="categoryTableView" destination="fL2-7w-TKr" id="nYv-hK-1Fd"/>
                         <outlet property="itemTableView" destination="eO2-0H-YCJ" id="ppq-Qm-I92"/>
-                        <segue destination="c27-gG-VVR" kind="show" id="gLh-8o-mHj"/>
+                        <segue destination="c27-gG-VVR" kind="show" identifier="calendar" id="gLh-8o-mHj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qlo-Et-iWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -163,7 +163,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K6N-jp-V5M" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vAw-k3-E15">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vAw-k3-E15">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -189,7 +189,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Find by name" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gla-Sf-JPf">
-                                <rect key="frame" x="20" y="94" width="200" height="30"/>
+                                <rect key="frame" x="20" y="84" width="200" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Tg8-pM-JpS"/>
@@ -199,10 +199,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J25-cU-OCJ">
-                                <rect key="frame" x="20" y="132" width="984" height="636"/>
+                                <rect key="frame" x="20" y="122" width="984" height="646"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userList" rowHeight="65" id="TP3-u4-VfS" customClass="UserTableViewCell" customModule="ItemManagement" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="userList" rowHeight="65" id="TP3-u4-VfS" customClass="UserTableViewCell" customModule="ItemManagement" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="984" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TP3-u4-VfS" id="QTN-0u-ccD">
@@ -245,7 +245,7 @@
                             <constraint firstItem="Bqg-wb-qes" firstAttribute="top" secondItem="J25-cU-OCJ" secondAttribute="bottom" id="QY2-oc-ifW"/>
                             <constraint firstAttribute="trailing" secondItem="J25-cU-OCJ" secondAttribute="trailing" constant="20" id="SI8-E0-Jg6"/>
                             <constraint firstItem="J25-cU-OCJ" firstAttribute="top" secondItem="gla-Sf-JPf" secondAttribute="bottom" constant="8" id="d4L-5B-xUl"/>
-                            <constraint firstItem="gla-Sf-JPf" firstAttribute="top" secondItem="0xj-gO-yyC" secondAttribute="bottom" constant="30" id="qWq-Zx-buV"/>
+                            <constraint firstItem="gla-Sf-JPf" firstAttribute="top" secondItem="0xj-gO-yyC" secondAttribute="bottom" constant="20" id="qWq-Zx-buV"/>
                             <constraint firstItem="gla-Sf-JPf" firstAttribute="leading" secondItem="h7r-Xf-LEl" secondAttribute="leading" constant="20" id="rgO-fx-cfb"/>
                         </constraints>
                     </view>
