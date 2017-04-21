@@ -30,42 +30,8 @@ class ActSelectionViewController: UIViewController {
     @IBAction func borrowButton(_ sender: Any) {
         performSegue(withIdentifier: "userList", sender: nil)
     }
+    
 
-    
-    func curlUpView(view:UIView, endFrame:CGRect){
-        let initialFrame = CGRect(x: endFrame.origin.x , y: self.view.frame.height, width: endFrame.size.width, height: endFrame.size.height)
-        view.frame = initialFrame
-        self.view.addSubview(view)
-        
-        UIView.animate(withDuration: 0.5) {
-            view.frame = endFrame
-        }
-        
-    }
-    
-    func downAndRemoveView(view:UIView){
-        let frame = view.frame
-        let endFrame = CGRect(x: frame.origin.x, y: self.view.frame.height, width: frame.size.width, height: frame.size.height)
-        
-//        self.view.setNeedsLayout()
-        
-        UIView.animate(withDuration: 0.5, animations: { 
-            view.frame = endFrame
-        }) { (bool) in
-            view.removeFromSuperview()
-        }
-        
-    }
-    
-    
-    
-    
-    
-//    func hideContentController(content:UIViewController){
-//        content.willMove(toParentViewController: nil)
-//        content.view.removeFromSuperview()
-//        content.removeFromParentViewController()
-//    }
     
     
     /*

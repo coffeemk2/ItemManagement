@@ -12,7 +12,7 @@ import RxCocoa
 
 class UserListViewController: UIViewController {
     
-    var modallyViewController :ModalViewController! = ModalViewController()
+    let modallyViewController :ModalViewController! = ModalViewController()
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var userListTableView: UITableView!
 
@@ -29,11 +29,7 @@ class UserListViewController: UIViewController {
             cell.fullnameLabel.text = item.0.fullname
             cell.usernameLabel.text = "@" + item.0.name
             cell.profileImageView.sd_setImage(with: URL(string: item.0.urlString) )
-            if item.1{
-                cell.accessoryView = UIImageView(image: #imageLiteral(resourceName: "common_check"))
-            }else{
-                cell.accessoryView = nil
-            }
+            cell.accessoryView = item.1 ? UIImageView(image: #imageLiteral(resourceName: "common_check")) : nil
         }.disposed(by: disposeBag)
         
         userListTableView.rx.itemSelected.subscribe(onNext: { indexPath in
@@ -41,10 +37,7 @@ class UserListViewController: UIViewController {
             self.viewModel.selectedUser.value = self.viewModel.users.value[indexPath.row]
         }).disposed(by: disposeBag)
         
-        userListTableView.rx.itemDeselected.subscribe(onNext: { indexPath in
-        }).disposed(by: disposeBag)
-        
-        
+        // API Trigger
         viewModel.scrollEndComing.value = true
         
         
@@ -70,29 +63,14 @@ class UserListViewController: UIViewController {
             self.modallyViewController.dismiss(parent: self)
             }.disposed(by: disposeBag)
         
-        
     }
     
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
- 
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 

@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Koyomi
 
 class CalendarViewController: UIViewController {
 
+    @IBOutlet weak var currentCalendar: Koyomi!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

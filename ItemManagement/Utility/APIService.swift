@@ -37,12 +37,11 @@ struct APIService{
         }
     }
     
-    
 }
 
 enum RequestState{
     case stopped
     case requesting
-    case error(Error)
+    case error(Error?)
     case response([Object]?)
 }

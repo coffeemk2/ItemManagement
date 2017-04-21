@@ -1,11 +1,12 @@
 PODS:
+  - Advance (0.9.1)
   - Alamofire (4.4.0)
   - Koyomi (1.2.4)
-  - Realm (2.4.4):
-    - Realm/Headers (= 2.4.4)
-  - Realm/Headers (2.4.4)
-  - RealmSwift (2.4.4):
-    - Realm (= 2.4.4)
+  - Realm (2.5.0):
+    - Realm/Headers (= 2.5.0)
+  - Realm/Headers (2.5.0)
+  - RealmSwift (2.5.0):
+    - Realm (= 2.5.0)
   - RxCocoa (3.3.1):
     - RxSwift (~> 3.3)
   - RxDataSources (1.0.3):
@@ -21,6 +22,7 @@ PODS:
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - Advance
   - Alamofire
   - Koyomi
   - RealmSwift
@@ -32,10 +34,11 @@ DEPENDENCIES:
   - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Advance: 58f115c484cded634ffe529fcf6d39e741de1a44
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   Koyomi: e028b378584ec90e257681bd255a3041ca109cc6
-  Realm: 5a280a1f5a9a3c267bebf4f41ee47911137703d7
-  RealmSwift: 0c02b9f2d4be4301c497ed10e53a0580584eb1dd
+  Realm: 62abce501668580092d2be9b6ba7324a3d5f906a
+  RealmSwift: 9f1a8f624f2f153410115c2cb7d486be9976565d
   RxCocoa: 7dcb7a1860fc9cd0e23dae67ab105fc2916670b6
   RxDataSources: a021a0e944ba5f7991259829d973afdbfa719c0b
   RxRealm: df024f04e64c3a9723dab63a6ec8621b3db6473f
@@ -43,6 +46,6 @@ SPEC CHECKSUMS:
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: a124fa5d9a35cddd3abea43d5fcd86a855a24e9f
+PODFILE CHECKSUM: 4a1ff58e80be8a0d6feeb58011a35b147afb65f1
 
 COCOAPODS: 1.2.0

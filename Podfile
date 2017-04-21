@@ -15,7 +15,8 @@ target 'ItemManagement' do
   pod "Alamofire"
   pod "SwiftyJSON"
   pod "SDWebImage"
-  
+  pod "Advance"
+
   target 'ItemManagementTests' do
     inherit! :search_paths
     # Pods for testing

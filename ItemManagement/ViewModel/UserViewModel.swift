@@ -18,13 +18,8 @@ class UserViewModel{
     internal var cellData: Observable<[(User,Bool)]>{
         return Observable.combineLatest(users.asObservable(), selectedUser.asObservable(), resultSelector: { (elements,selected) in
                 return elements.map({ e -> (User,Bool) in
-                    if e.id == selected?.id{
-                        return (e,true)
-                    }else{
-                        return (e,false)
-                    }
+                    return e.id == selected?.id ? (e,true) : (e,false)
                 })
-            
             }
         )
     }
@@ -49,11 +44,9 @@ class UserViewModel{
                 self.subscribeState(state: event.element!)
                 print(self.viewState.value)
             }.disposed(by: disposeBag)
-        
-        
-
     }
     
+  
     
     func subscribeState(state: RequestState) {
         switch state {
@@ -71,8 +64,6 @@ class UserViewModel{
         }
     }
     
-    
-
 }
 
 
@@ -89,7 +80,7 @@ enum ViewState {
     case working
     case blank
     case requesting
-    case error(Error)
+    case error(Error?)
     
     
     /**

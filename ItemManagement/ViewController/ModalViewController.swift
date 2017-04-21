@@ -36,11 +36,11 @@ class ModalViewController: UIViewController {
     
     func createContentsWithText(goText: String?, cancel:String?, labelEnable:Bool, backgroundColor: UIColor){
         let font = UIFont(name: "Lato-Regular", size: 18.0)
-        let buttonHeight = String("A").size(attributes: [NSFontAttributeName : font ?? UIFont.systemFont(ofSize: 18.0)]).height
+        let fontHeight = String("A").size(attributes: [NSFontAttributeName : font ?? UIFont.systemFont(ofSize: 18.0)]).height
         
         if let text = goText as NSString?{
             let width = text.size(attributes: [NSFontAttributeName : font ?? UIFont.systemFont(ofSize: 18.0)]).width
-            let rect = CGRect(x: self.view.frame.width - width - margin - marginInsideButton*2, y: margin, width: width + marginInsideButton*2 , height: buttonHeight + 10)
+            let rect = CGRect(x: self.view.frame.width - width - margin - marginInsideButton*2, y: margin, width: width + marginInsideButton*2 , height: fontHeight + 10)
             goButton.frame = rect
             self.goButton.backgroundColor = Constants.Color.main
             self.goButton.setTitle(text as String, for: .normal)
@@ -53,7 +53,7 @@ class ModalViewController: UIViewController {
         if let text = cancel as NSString?{
             let width = text.size(attributes: [NSFontAttributeName : font ?? UIFont.systemFont(ofSize: 18.0)]).width
             let rightContentX = (goText != nil) ? self.goButton.frame.origin.x : self.view.frame.width
-            let rect = CGRect(x: rightContentX - width - marginInsideButton*2 - marginWithContent, y: margin, width: width + marginInsideButton*2 , height: buttonHeight + 10)
+            let rect = CGRect(x: rightContentX - width - marginInsideButton*2 - marginWithContent, y: margin, width: width + marginInsideButton*2 , height: fontHeight + 10)
             cancelButton.frame = rect
             self.cancelButton.backgroundColor = UIColor.white
             self.cancelButton.setTitle(text as String, for: .normal)
@@ -65,7 +65,7 @@ class ModalViewController: UIViewController {
         
         if labelEnable{
             let rightContentX = (self.cancelButton != nil) ? self.cancelButton.frame.origin.x : (goText != nil) ? self.goButton.frame.origin.x : self.view.frame.width
-            let rect = CGRect(x: margin, y: margin + 5, width: rightContentX - marginWithContent - margin, height: buttonHeight )
+            let rect = CGRect(x: margin, y: margin + 5, width: rightContentX - marginWithContent - margin, height: fontHeight )
             self.textLabel.frame = rect
             self.textLabel.font = font
             self.textLabel.textColor = UIColor.white
@@ -109,9 +109,6 @@ class ModalViewController: UIViewController {
         }
     }
     
-    
-    
-
     /*
     // MARK: - Navigation
 
